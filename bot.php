@@ -67,7 +67,7 @@ foreach($response['messages'] as $key => $message) {
         $text = "Hallo @".$message['name'].",\n".
         "relatiert: https://pr0gramm.com/new/".$message['itemId'].":comment".$message['id']." (letzte Kommentarebene erreicht)\n".
         "du hast den falschen Account markiert. Der korrekte Account ist @".$forwardUser.".\n".
-        "Da jetzt die korrekte Markierung getätigt wurde musst du nichts weiter unternehmen.";
+        "Da jetzt die korrekte Markierung getätigt wurde, musst du nichts weiter unternehmen.";
         apiCall("https://pr0gramm.com/api/comments/post", array('itemId' => $message['itemId'], 'parentId' => 0, '_nonce' => $nonce, 'comment' => $text));
       }
     }
