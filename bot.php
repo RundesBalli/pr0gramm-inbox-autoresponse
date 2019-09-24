@@ -57,8 +57,7 @@ foreach($response['messages'] as $key => $message) {
       $text = "Hallo ".$message['name'].",\n".
       "du hast den falschen Account markiert.\n".
       "Der korrekte Account ist @".$forwardUser.".\n".
-      "Da jetzt die korrekte Markierung getätigt wurde, musst du nichts weiter unternehmen.\n\n".
-      "FAQ: Ja, dieser Account ist ein Bot und ist \"gesperrt\", damit nicht fälschlicherweise mit diesem interagiert wird.";
+      "Da jetzt die korrekte Markierung getätigt wurde, musst du nichts weiter unternehmen.";
       $response = apiCall("https://pr0gramm.com/api/comments/post", array('itemId' => $message['itemId'], 'parentId' => $message['id'], '_nonce' => $nonce, 'comment' => $text));
       /**
        * Wenn das tiefste Level erreicht wurde kann kein Kommentar mehr gepostet werden.
